@@ -20,14 +20,13 @@ function crossOut() {
 
 li.on("dblclick", crossOut);
 
-let deleteButton = $(li).append("<button></button>");
-    deleteButton.append(document.createTextNode("X"));
+let deleteButton = $("<deleteButton></deleteButton>");
+deleteButton.append(document.createTextNode("X"));
+li.append(deleteButton);
 
 
 // Allows item to be deleted when "X" button is clicked
 deleteButton.on("click", deleteListItem);
-
-
 function deleteListItem() {
     li.addClass("delete");
 }
