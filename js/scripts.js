@@ -1,6 +1,3 @@
-function newItem() {
-
-
 let list = $("#list");
 let li = $("<li></li>");
 let inputValue = $("#input").val();
@@ -16,14 +13,14 @@ if (inputValue === '') {
 
 // Adds strike-through on double-click
 function crossOut() {
-    li.addClass("strike");
+    li.toggleClass("strike");
 }
 
 li.on("dblclick", crossOut);
 
 let deleteButton = $(li).append("<button></button>");
     deleteButton.append(document.createTextNode("X"));
-}
+
 
 // Allows item to be deleted when "X" button is clicked
 deleteButton.on("click", deleteListItem);
