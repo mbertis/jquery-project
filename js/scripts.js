@@ -25,10 +25,13 @@ let deleteButton = $(li).append("<button></button>");
     deleteButton.append(document.createTextNode("X"));
 }
 
+// Allows item to be deleted when "X" button is clicked
 deleteButton.on("click", deleteListItem);
+
 
 function deleteListItem() {
     li.addClass("delete");
 }
 
+// Allows for reordering items
 $("#list").sortable();
